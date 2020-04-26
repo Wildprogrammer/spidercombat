@@ -30,7 +30,6 @@
 # browser.get(url)
 # time.sleep(3)
 # browser.save_screenshot('baid.png')
-#
 # browser.quit()
 
 from pymongo import MongoClient
