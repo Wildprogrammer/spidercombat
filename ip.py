@@ -2,7 +2,7 @@ import requests
 import parsel
 import time
 import json
-from pymongo import MongoClient
+
 
 
 class IpSpider():
@@ -10,8 +10,6 @@ class IpSpider():
         self.headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko'}
         self.url = 'https://www.kuaidaili.com/free/inha/{}/'
         self.correct_ip=[]
-        # client=MongoClient()
-        # self.collection=client["ip"]["kuaidaili"]
 
     def get_url(self):
         return [self.url.format(i) for i in range(501,600)]
@@ -48,8 +46,6 @@ class IpSpider():
             except:
                 pass
 
-    # def save_data(self, data):
-    #     self.collection.insert(dict(data))
 
     def run(self):
         url_list=self.get_url()
