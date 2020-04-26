@@ -58,13 +58,6 @@ class TiebaSpider():
             except:
                 pass
 
-    # def save_data(self,data_list):
-    #     file_name=self.tieba_name+"txt"
-    #     with open("image//"+file_name,'a') as f:
-    #         for response_2 in data_list:
-    #             f.write(json.dumps(response_2,ensure_ascii=False,indent=2))
-    #             f.write("\n")
-
     def run(self):
         # 发送请求，获取数据
         next_url = self.url_temp
@@ -74,34 +67,9 @@ class TiebaSpider():
             content_list, next_url, picture = self.get_data(html_temp)
             # 保存数据
             self.sava_picture(picture)
-    #       self.save_data(content_list)
 
 
 if __name__ == '__main__':
-    a = TiebaSpider("美女")
+    a = TiebaSpider("python")
     a.run()
-    # 请求下一页数据
-# headers= {
-#     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko'}
-# base_url="https://tieba.baidu.com/f?kw='美女'"
-# response=requests.get(base_url,headers=headers)
-# html_str=response.text
-#
-# html=parsel.Selector(html_str)
-# title_url=html.xpath('//div[class="threadlist_lz clearfix"/div/a/@href').extract()
-#
-# second_url="https://tieba.baidu.com"
-# for url in title_url:
-#     all_url=second_url+url
-#     print(all_url)
-#     response_2=requests.get(all_url,headers=headers).text
-#     response_2_data=parsel.Selector(response_2)
-#     result_list=response_2_data.xpath('//cc/')
-#     for li in result_list:
-#         img_data=requests.get(li,headers=headers).content
-#         file_name=li.split('/')[-1]
-#         with open("img\\"+file_name,"wb") as f:
-#             f.write(img_data)
 
-
-# //*[@id="thread_list"]/li//div[@class="threadlist_lz clearfix"]/div[1]/a/text()
