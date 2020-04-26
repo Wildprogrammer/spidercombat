@@ -39,3 +39,4 @@ class DouBanSpider():
 if __name__ == '__main__':
     a = DouBanSpider()
     a.run()
+#
