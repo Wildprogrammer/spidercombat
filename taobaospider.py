@@ -73,3 +73,4 @@ class TaobaoSpider():
 if __name__ == '__main__':
     tb=TaobaoSpider()
     tb.run()
+#
