@@ -21,3 +21,4 @@ for page in range(2):
         with open('video\ku6\\' + video_title, 'wb') as f:
             f.write(video_data)
             print("下载成功")
+#
